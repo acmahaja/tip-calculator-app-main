@@ -140,3 +140,31 @@ input::placeholder {
   outline: 2px solid var(--Strong-Cyan);
   cursor: pointer;
 }
+
+
+@media screen and (min-width: 1440px) {
+  .PercentageButton {
+    width: 30%;
+  }
+
+  .buttons input {
+    width: 30%;
+  }
+
+  .inputBox {
+    height: 3.375em;
+    margin-bottom: 2em;
+    border-radius: .5em;
+  }
+
+  .inputBox:hover {
+    outline: 3px solid var(--Strong-Cyan);
+    cursor: pointer;
+  }
+
+  .buttons {
+    margin: 1em 0em 1.25em 0em;
+  }
+    
+
+}

@@ -6,7 +6,7 @@ import { Tip } from "./AmountComponent";
 
 const Form = ({ bill, updateBill, percentage, updatePercentage, people, updatePeople }) => {
   return (
-    <div className="Bill">
+    <div className="Bill borderBox">
       <NumberInput
         number={bill}
         name={"Bill"}

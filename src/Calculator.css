@@ -23,3 +23,35 @@
   height: 27.5vh;
 }
 
+@media screen and (min-width: 1440px) {
+  .Calculator {
+    margin-top: 4em;
+    height: 30.1875em;
+    width: 57.5625em;
+    border-radius: 1.75em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 32px 43px rgb(79 166 175 / 20%);
+    padding: 2em;
+  }
+
+  .Bill {
+    width: 47%;
+    height: 100%;
+    padding: 1em 1em 0em 1em;
+  }
+
+  .Amount {
+    width: 48%;
+    height: 100%;
+    padding: 2.5em;
+    justify-content: flex-start;
+  }
+
+  .Amount button {
+    position: relative;
+    top: 5em;
+  }
+}
