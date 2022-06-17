@@ -4,10 +4,25 @@ label {
   text-align: left;
   font-weight: 700;
   color: var(--Dark-Grayish-Cyan);
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
+span.error{
+    color: rgb(252, 125, 125);
+}
+
+.inputBox.error {
+    outline: 2px solid rgb(252, 125, 125);
+}
+.inputBox.error:hover {
+    outline: 2px solid rgb(252, 125, 125) !important;
+}
+
+
 input::placeholder {
-  color: var(--Grayish-Cyan);
+  color: var(--Dark-Grayish-Cyan);
 }
 
 .inputBox {
@@ -89,7 +104,7 @@ input::placeholder {
   font-size: 1.5em;
   margin-bottom: 0.75em;
   border: none;
-  border-radius: 0.35em;
+  border-radius: 0.25em;
   color: var(--White);
   background-color: var(--Very-Dark-Cyan);
 }

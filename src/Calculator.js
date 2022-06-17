@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import { NumberInput, PercentageInput } from "./FormComponents";
 
-const Form = ({ updateBill, percentage, updatePercentage }) => {
+const Form = ({ updateBill, percentage, updatePercentage,updatePeople }) => {
   return (
     <div className="Bill">
       <NumberInput
@@ -11,7 +11,16 @@ const Form = ({ updateBill, percentage, updatePercentage }) => {
         icon={"/images/icon-dollar.svg"}
         setNumber={updateBill}
       />
-      <PercentageInput percentage={percentage} setPercentage={updatePercentage} />
+      <PercentageInput
+        percentage={percentage}
+        setPercentage={updatePercentage}
+      />
+      <NumberInput
+        name={"Number of People"}
+        icon={"/images/icon-person.svg"}
+        setNumber={updatePeople}
+        useValidation = {true}
+      />
     </div>
   );
 };
@@ -31,7 +40,12 @@ export const Calculator = () => {
 
   return (
     <div className="Calculator borderBox">
-      <Form updateBill={updateBill} percentage={Percentage} updatePercentage={updatePercentage} />
+      <Form
+        updateBill={updateBill}
+        percentage={Percentage}
+        updatePercentage={updatePercentage}
+        updatePeople={setPeople}
+      />
     </div>
   );
 };

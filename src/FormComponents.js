@@ -75,14 +75,33 @@ export const PercentageInput = ({ percentage, setPercentage }) => {
   );
 };
 
-export const NumberInput = ({ name, icon, setNumber }) => {
-  const [numberStyle, setNumberStyle] = useState("borderBox zeroNum");
+export const NumberInput = ({ name, icon, setNumber, useValidation }) => {
+  const [numberStyle, setNumberStyle] = useState(["borderBox", "zeroNum"]);
+  const [hasError, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const updateNumber = (event) => {
+    event.target.value = parseFloat(event.target.value)
+    if (useValidation) {
+    
+      if (event.target.value === "") {
+        setError(true);
+        setErrorMessage("Can't be empty");
+        return;
+      }
+      if (event.target.value === 0) {
+        setError(true);
+        setErrorMessage("Can't be zero");
+        return;
+      }
+      setError(false);
+      setErrorMessage("");
+    }
+
     if (event.target.value !== "") {
-      setNumberStyle(`borderBox notZeroNum`);
+      setNumberStyle(["borderBox", "zeroNum"]);
     } else {
-      setNumberStyle(`borderBox zeroNum`);
+      setNumberStyle(["borderBox", "zeroNum"]);
     }
 
     if (event.target.value === "") {
@@ -94,8 +113,13 @@ export const NumberInput = ({ name, icon, setNumber }) => {
   };
   return (
     <>
-      <label>{name}</label>
-      <div className="inputBox borderBox">
+      <label>
+        {name}
+        <span className="error">
+            {errorMessage}
+        </span>
+      </label>
+      <div className={`inputBox borderBox ${hasError ? `error` : null}`}>
         <img src={icon} srcSet={icon} alt={"asd"} />
         <input
           style={{ backgroundImage: `./images/icon-dollar.svg` }}
