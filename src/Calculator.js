@@ -1,26 +1,37 @@
 import "./Calculator.css";
 import { useState } from "react";
 
-const Form = ({Bill}) => {
+import { NumberInput, PercentageInput } from "./FormComponents";
 
-    return (
-        <form className="Bill">
-            <>
-                <label>
-                    Bill
-                </label>
-                
-            </>
-        </form>
-    )
+const Form = ({ updateBill, percentage, updatePercentage }) => {
+  return (
+    <div className="Bill">
+      <NumberInput
+        name={"Bill"}
+        icon={"/images/icon-dollar.svg"}
+        setNumber={updateBill}
+      />
+      <PercentageInput percentage={percentage} setPercentage={updatePercentage} />
+    </div>
+  );
 };
 
 export const Calculator = () => {
-    const [Bill, setBill] = useState(1)
-  
-    return (
-    <div className="Calculator">
-      <Form Bill = {Bill}/>
+  const [Bill, setBill] = useState(0);
+  const [People, setPeople] = useState(0);
+  const [Percentage, setPercentage] = useState(10);
+
+  const updateBill = (num) => {
+    setBill(num);
+  };
+
+  const updatePercentage = (num) => {
+    setPercentage(parseFloat(num));
+  };
+
+  return (
+    <div className="Calculator borderBox">
+      <Form updateBill={updateBill} percentage={Percentage} updatePercentage={updatePercentage} />
     </div>
   );
 };
