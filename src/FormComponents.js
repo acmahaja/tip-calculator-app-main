@@ -75,7 +75,7 @@ export const PercentageInput = ({ percentage, setPercentage }) => {
   );
 };
 
-export const NumberInput = ({ name, icon, setNumber, useValidation }) => {
+export const NumberInput = ({ number, name, icon, setNumber, useValidation }) => {
   const [numberStyle, setNumberStyle] = useState(["borderBox", "zeroNum"]);
   const [hasError, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -94,6 +94,11 @@ export const NumberInput = ({ name, icon, setNumber, useValidation }) => {
         setErrorMessage("Can't be zero");
         return;
       }
+      if (event.target.value < 0) {
+        setError(true);
+        setErrorMessage("No Negatives");
+        return;
+      }
       setError(false);
       setErrorMessage("");
     }
@@ -101,15 +106,14 @@ export const NumberInput = ({ name, icon, setNumber, useValidation }) => {
     if (event.target.value !== "") {
       setNumberStyle(["borderBox", "zeroNum"]);
     } else {
-      setNumberStyle(["borderBox", "zeroNum"]);
+      setNumberStyle(["borderBox", "notZeroNum"]);
     }
 
     if (event.target.value === "") {
       event.target.value = 0;
     }
 
-    event.target.value = parseFloat(event.target.value);
-    setNumber(event.target.value);
+    setNumber(parseFloat(event.target.value));
   };
   return (
     <>
@@ -125,9 +129,9 @@ export const NumberInput = ({ name, icon, setNumber, useValidation }) => {
           style={{ backgroundImage: `./images/icon-dollar.svg` }}
           className={numberStyle}
           type="number"
-          min={0}
           onChange={updateNumber}
           placeholder={0}
+          value={number}
         />
       </div>
     </>

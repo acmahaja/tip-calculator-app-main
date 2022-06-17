@@ -9,17 +9,16 @@ label {
   justify-content: space-between;
 }
 
-span.error{
-    color: rgb(252, 125, 125);
+span.error {
+  color: rgb(252, 125, 125);
 }
 
 .inputBox.error {
-    outline: 2px solid rgb(252, 125, 125);
+  outline: 2px solid rgb(252, 125, 125);
 }
 .inputBox.error:hover {
-    outline: 2px solid rgb(252, 125, 125) !important;
+  outline: 2px solid rgb(252, 125, 125) !important;
 }
-
 
 input::placeholder {
   color: var(--Dark-Grayish-Cyan);
@@ -71,7 +70,7 @@ input::placeholder {
 }
 
 .notZeroNum {
-  color: var(--Very-Dark-Cyan);
+  color: var(--Very-Dark-Cyan) !important;
 }
 
 .inputBox:hover {
@@ -79,8 +78,8 @@ input::placeholder {
   cursor: pointer;
 }
 
-.inputBox input:hover{
-    cursor: pointer;
+.inputBox input:hover {
+  cursor: pointer;
 }
 
 .inputBox input:focus {
@@ -89,7 +88,7 @@ input::placeholder {
 
 .buttons {
   margin-top: 1em;
-  margin-bottom: 1em;
+  margin-bottom: 1.25em;
   width: 100%;
   height: fit-content;
   display: flex;
@@ -103,7 +102,7 @@ input::placeholder {
   width: 48%;
   height: 2em;
   font-size: 1.5em;
-  margin-bottom: 0.75em;
+  margin-bottom: 0.55em;
   border: none;
   border-radius: 0.25em;
   color: var(--White);
@@ -115,16 +114,16 @@ input::placeholder {
   color: var(--Very-Dark-Cyan);
 }
 
-.PercentageButton:hover{
-    background-color: var(--Strong-Cyan);
-    color: var(--Very-Dark-Cyan);
+.PercentageButton:hover {
+  background-color: var(--Strong-Cyan);
+  color: var(--Very-Dark-Cyan);
 }
 
 .buttons input {
   width: 48%;
   height: 2em;
   font-size: 1.5em;
-  margin-bottom: 0.75em;
+  margin-bottom: 0.5em;
   border: none;
   border-radius: 0.35em;
   background-color: var(--Very-Light-Grayish-Cyan);
