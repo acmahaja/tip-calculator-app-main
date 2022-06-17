@@ -23,7 +23,7 @@
   height: 27.5vh;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1000px) {
   .Calculator {
     margin-top: 4em;
     height: 30.1875em;

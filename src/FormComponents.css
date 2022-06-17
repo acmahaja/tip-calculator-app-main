@@ -142,7 +142,7 @@ input::placeholder {
 }
 
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1000px) {
   .PercentageButton {
     width: 30%;
   }
