@@ -28,7 +28,7 @@ const Form = ({ updateBill, percentage, updatePercentage,updatePeople }) => {
 export const Calculator = () => {
   const [Bill, setBill] = useState(0);
   const [People, setPeople] = useState(0);
-  const [Percentage, setPercentage] = useState(10);
+  const [Percentage, setPercentage] = useState(0);
 
   const updateBill = (num) => {
     setBill(num);
